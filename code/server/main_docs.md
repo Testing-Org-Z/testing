@@ -1,24 +1,45 @@
-# Documentation for https://raw.githubusercontent.com/Testing-Org-Z/testing/main/code/server/main.py
+# Documentation for https://raw.githubusercontent.com/Testing-Org-Z/testing/tests/code/server/main.py
 
-# Code Documentation
+## Clash of Clans Server
 
-## Description
-This code is a basic example of using the `Server` class from the `vscode` module. It creates an instance of the `Server` class, and then runs the server forever with the specified host.
+This is a documentation for the Python code that sets up and runs a Clash of Clans server.
 
-## Code
+### Setup
+
+Before running the code, make sure you have installed the `clashofclans` module in your Python environment.
+
+### Import
+
+To use the Clash of Clans server functionality, import the `Server` class from the `clashofclans` module.
+
 ```python
-from vscode import Server
-
-server = Server()
-
-server.run_forever(host="localhost")
+from clashofclans import Server
 ```
 
-## Usage
-You can use this code as a starting point for creating a server using the `vscode` module. By modifying the `host` parameter in the `run_forever` method, you can specify the host you would like to run the server on.
+### Create Server Instance
 
-## Dependencies
-- `vscode` module
+Create an instance of the `Server` class to start the server.
 
-## Further Information
-For more information about the `vscode` module and the `Server` class, please refer to the official documentation or the source code of the module.
+```python
+server = Server()
+```
+
+### Debug Mode
+
+By default, the server runs in debug mode, which means it will provide detailed log output. To disable debug mode, set the `debug` attribute of the server instance to `False`.
+
+```python
+server.debug = True
+```
+
+### Run the Server
+
+To start the Clash of Clans server, use the `run_forever` method with the desired `host` and `port` parameters. In the example below, the server will listen on `localhost` at port `4005`.
+
+```python
+server.run_forever(host="localhost", port=4005)
+```
+
+---
+
+Note: Make sure to check the Clash of Clans server documentation for more details on available methods and configurations.
